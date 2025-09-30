@@ -1,15 +1,26 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+interface BookingForm {
+  name: string;
+  email: string;
+  phone: string;
+  location: string;
+  package: string;
+  date: string;
+  time: string;
+  message: string;
+}
+
 @Component({
   selector: 'app-booking',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './booking.html',
-  styles: ''
+  styles: [``]
 })
-export class BookingComponent {
-  formData = {
+export class Booking {
+  formData: BookingForm = {
     name: '',
     email: '',
     phone: '',
@@ -21,7 +32,10 @@ export class BookingComponent {
   };
 
   onSubmit() {
-    alert('Booking submitted! We will contact you soon. Thank you for choosing Suds and Shine.');
+    alert(
+      `Booking submitted!\n\nThank you ${this.formData.name}, we’ll contact you soon.`
+    );
+
     // Reset form after submission
     this.formData = {
       name: '',
