@@ -1,1 +1,38 @@
-<p>booking works!</p>
+<section class="booking-section">
+  <h2>Book Now!</h2>
+  <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" [(ngModel)]="formData.location" required>
+
+    <label for="package">Select Package:</label>
+    <select id="package" name="package" [(ngModel)]="formData.package" required>
+      <option value="">Choose a package</option>
+      <option value="basic">Basic Wash - 10.00</option>
+      <option value="deluxe">Deluxe Wash - 15.00</option>
+      <option value="premium">Premium Shine - 20.00</option>
+      <option value="ultimate">Ultimate Clean - 25.00</option>
+      <option value="vip">VIP Package - 30.00</option>
+      <option value="family">Family Plan - 40.00</option>
+    </select>
+
+    <label for="date">Preferred Date:</label>
+    <input type="date" id="date" name="date" [(ngModel)]="formData.date" required>
+
+    <label for="time">Preferred Time:</label>
+    <input type="time" id="time" name="time" [(ngModel)]="formData.time" required>
+
+    <label for="message">Additional Details:</label>
+    <textarea id="message" name="message" rows="4" [(ngModel)]="formData.message"></textarea>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
