@@ -1,0 +1,295 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0fa; /* Lighter, sky-like bg for depth */
+    color: #414044;
+    /* Enhanced: Deeper perspective for more dramatic 3D space */
+    perspective: 1200px;
+    perspective-origin: center 10%;
+}
+
+header {
+    background: linear-gradient(145deg, #2f00ff, #7706e0); /* Glossy gradient */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /* Enhanced: Stronger tilt and forward pop for header */
+    transform: rotateX(8deg) translateZ(20px);
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Deeper shadow for grounding */
+    position: relative;
+}
+
+nav {
+    background: linear-gradient(to bottom, #4134f7, #bf27dd); /* Subtle colour of blue and white */
+    padding: 10px;
+    text-align: center;
+    /* New: Slight 3D lift for nav bar */
+    transform: translateZ(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav button {
+    background: linear-gradient(145deg, #007bff, #004085); /* Reflective button surface */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    /* Enhanced: Beveled 3D button with layered shadows */
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.3), 
+        inset 0 2px 2px rgba(255,255,255,0.4), /* Shiny highlight */
+        inset 0 -2px 2px rgba(0,0,0,0.3); /* Inset shadow for depth */
+    transform: translateZ(5px);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    background: linear-gradient(145deg, #0056b3, #003366);
+    /* Enhanced: Stronger lift and tilt on hover */
+    transform: translateY(-3px) translateZ(15px) rotateX(12deg);
+    box-shadow: 
+        0 8px 15px rgba(0,0,0,0.4), 
+        inset 0 2px 2px rgba(255,255,255,0.5),
+        inset 0 -2px 2px rgba(0,0,0,0.4);
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Enhanced: Sections float in 3D space */
+    transform: translateZ(10px);
+    transform-style: preserve-3d;
+}
+
+#packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    position:relative;
+    /* Enhanced: Stronger perspective for card depth */
+    perspective: 1000px;
+}
+
+.package-card {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Glassy surface */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    /* Enhanced: Card as a 3D object with edge and thicker feel */
+    transform: rotateX(5deg) rotateY(-5deg) translateZ(20px);
+    transform-style: preserve-3d;
+    box-shadow: 
+        0 8px 16px rgba(0,0,0,0.25), /* Stronger ground shadow */
+        0 0 15px rgba(0,123,255,0.15); /* Subtle blue glow for shine theme */
+    border: 1px solid rgba(255,255,255,0.5); /* Reflective edge */
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.package-card::before {
+    /* New: Pseudo-element for card "side" to mimic thickness */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 5px;
+    height: 100%;
+    caret-color: #ffffff;
+    background: linear-gradient(to bottom, #ccc, #999); /* Side texture */
+    transform: rotateY(90deg) translateZ(-2.5px);
+    transform-origin: right;
+}
+
+.package-card h3 {
+    color: #0602f5cc;
+    /* New: Slight forward pop for text */
+    transform: translateZ(10px);
+    position: relative;
+}
+
+.package-card .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    position:relative;
+    /* Enhanced: Price pops out more */
+    transform: translateZ(1px);
+    display: inline-block;
+    background: linear-gradient(145deg, #2d1599, #5359af); /* Reflective price tag */
+    padding: 5px;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.package-card:hover {
+    /* Enhanced: Dramatic 3D tilt and lift, like picking up a card */
+    transform: rotateY(15deg) rotateX(10deg) translateZ(50px) translateY(-10px);
+    box-shadow: 
+        0 12px 24px rgba(0,0,0,0.3), 
+        0 0 20px rgba(0,123,255,0.2);
+    background: linear-gradient(145deg, #ffffff, #d9d9d9); /* Brighter reflection */
+}
+
+form {
+    background: linear-gradient(145deg, #ffffff, #ececec); /* Smooth panel texture */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Enhanced: Form as a 3D panel */
+    transform: rotateX(3deg) translateZ(15px);
+    transform-style: preserve-3d;
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.2), 
+        inset 0 1px 2px rgba(255,255,255,0.3); /* Inset shine */
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    /* New: Slight forward tilt for labels */
+    transform: translateZ(5px);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Enhanced: Inputs with 3D inset and focus glow */
+    box-shadow: 
+        inset 0 3px 6px rgba(0,0,0,0.1), 
+        0 0 5px rgba(0,123,255,0.1);
+    transform: translateZ(3px);
+    transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    /* Enhanced: Inputs lift and glow on focus */
+    transform: translateZ(8px);
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.05),
+        0 0 12px rgba(0,123,255,0.3);
+    border-color: #007bff;
+}
+
+form button {
+    background: linear-gradient(145deg, #844ac7, #4717a1); /* Glossy green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    /* Enhanced: Tactile 3D button */
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.3), 
+        inset 0 2px 2px rgba(255,255,255,0.4), 
+        inset 0 -2px 2px rgba(0,0,0,0.3);
+    transform: translateZ(10px);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(145deg, #2112ac, #8f29b8);
+    /* Enhanced: Button presses down and pops forward */
+    transform: translateY(-3px) translateZ(20px) rotateX(10deg);
+    box-shadow: 
+        0 8px 16px rgba(0,0,0,0.4), 
+        inset 0 2px 2px rgba(255,255,255,0.5),
+        inset 0 -2px 2px rgba(0,0,0,0.4);
+    text-align: center;
+    position: relative;
+}
+
+form button:active {
+    /* New: Pressed-down effect for realism */
+    transform: translateY(0) translateZ(5px);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.2), 
+        inset 0 1px 1px rgba(255,255,255,0.2);
+}
+
+#about, #contact {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Matching card texture */
+    border-radius: 8px;
+    text-align: center;
+    /* Enhanced: Floating panel effect */
+    transform: rotateX(3deg) translateZ(15px);
+    transform-style: preserve-3d;
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.2), 
+        0 0 15px rgba(0,123,255,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+footer {
+    background: linear-gradient(to top, #330fb4, #d321da); /* Metallic texture */
+    color: whitesmoke;
+    text-align: center;
+    padding: 4px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    /* Enhanced: Grounded with 3D shadow */
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+    transform: translateZ(5px);
+}
+
+
+
+/* WhatsApp Icon Styling */
+#whatsapp-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px; /* Circular icon size */
+    height: 1000px;
+    background: linear-gradient(145deg, #25D366, #20B058); /* WhatsApp green with glossy gradient */
+    color: white;
+    border-radius: 50%; /* Circular shape */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 01000px; /* Icon size */
+    /* 3D Effects */
+    transform: translateZ(50px);
+    transform-style: preserve-3d;
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.3), /* Ground shadow for depth */
+        inset 0 2px 2px rgba(255,255,255,0.4), /* Shiny highlight */
+        inset 0 -2px 2px rgba(0,0,0,0.3); /* Inset shadow for bevel */
+    transition: all 0.3s ease;
+    /* Position in nav */
+    margin: 100px;
+    vertical-align: middle;
+}
+
+.whatsapp-icon:hover {
+    /* Enhanced 3D lift and tilt on hover */
+    transform: translateY(-3px) translateZ(20px) rotateX(10deg);
+    background: linear-gradient(145deg, #13c722, #057518); /* Slightly darker on hover */
+    box-shadow: 
+        0 8px 16px rgba(0,0,0,0.4), 
+        inset 0 2px 2px rgba(255,255,255,0.5),
+        inset 0 -2px 2px rgba(0,0,0,0.4);
+}
+
+.whatsapp-icon:active {
+    /* Pressed-down effect for tactile realism */
+    transform: translateY(0) translateZ(5px);
+    box-shadow: 
+        0 2px 4px rgb(41, 221, 24), 
+        inset 0 1px 1px rgb(94, 219, 56);
+    background: linear-gradient(145deg, #13c722, #057518);
+}

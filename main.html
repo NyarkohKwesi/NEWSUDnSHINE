@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <nav>
+        <button onclick="showSection('packages')">Packages</button>
+        <button onclick="showSection('about')">About Us</button>
+        <button onclick="showSection('contact')">Contact Us</button>
+        <button onclick="showSection('booking')">Book Now</button>
+    </nav>
+
+    <section id="packages">
+        <h2>Packages Specially for You</h2>
+        <div class="package-card">
+            <h3>Basic Wash</h3>
+            <p>Quick exterior wash and rinse.</p>
+            <div class="price">10.00</div>
+        </div>
+        <div class="package-card">
+            <h3>Deluxe Wash</h3>
+            <p>Exterior wash, wax, and tire shine.</p>
+            <div class="price">15.00</div>
+        </div>
+        <div class="package-card">
+            <h3>Premium Shine</h3>
+            <p>Full exterior, interior vacuum, and polish.</p>
+            <div class="price">20.00</div>
+        </div>
+        <div class="package-card">
+            <h3>Ultimate Clean</h3>
+            <p>Premium plus window cleaning and detailing.</p>
+            <div class="price">25.00</div>
+        </div>
+        <div class="package-card">
+            <h3>VIP Package</h3>
+            <p>Ultimate plus engine bay clean and protectant.</p>
+            <div class="price">30.00</div>
+        </div>
+        <div class="package-card">
+            <h3>Family Plan</h3>
+            <p>VIP for up to 3 vehicles.</p>
+            <div class="price">40.00</div>
+        </div>
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>About Us</h2>
+        <p>Suds and Shine is a friendgroup-owned business dedicated to providing top-notch cleaning services for a year now. We specialize in home service car washes, using eco-friendly products to ensure your satisfaction.</p>
+        <p>Your car, clean at your service!</p>
+    </section>
+
+    <section id="contact" style="display: none;">
+        <h2>Contact Us Now</h2>
+        <p>Ready to get in touch? Email us at info@sudsandshine.com or call +233 0557002772.</p>
+        <p>Follow us on social media for updates and promotions!</p>
+    <a href="https://wa.me/0557002772" class="whatsapp-icon" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</nav>
+    </section>
+
+    <section id="booking" style="display: none;">
+        <h2>Book Now!</h2>
+        <form id="bookingForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="package">Select Package:</label>
+            <select id="package" name="package" required>
+                <option value="">Choose a package</option>
+                <option value="basic">Basic Wash - 10.00</option>
+                <option value="deluxe">Deluxe Wash - 15.00</option>
+                <option value="premium">Premium Shine - 20.00</option>
+                <option value="ultimate">Ultimate Clean - 25.00</option>
+                <option value="vip">VIP Package - 30.00</option>
+                <option value="family">Family Plan - 40.00</option>
+            </select>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="message">Additional Details:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Suds and Shine. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = ['packages', 'about', 'contact', 'booking'];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        showSection('packages');
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Booking submitted! We will contact you soon. Thank you for choosing Suds and Shine.');
+        });
+    </script>
+</body>
+</html>
