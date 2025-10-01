@@ -1,51 +1,37 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-interface BookingForm {
-  name: string;
-  email: string;
-  phone: string;
-  location: string;
-  package: string;
-  date: string;
-  time: string;
-  message: string;
-}
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-booking',
   standalone: true,
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './booking.html',
   styles: [``]
 })
+
+
 export class Booking {
-  formData: BookingForm = {
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    package: '',
-    date: '',
-    time: '',
-    message: ''
-  };
+  booking_form = new FormGroup({
+    name: new FormControl('', { nonNullable: true }),
+    email: new FormControl('', { nonNullable: true }),
+    phone: new FormControl('', { nonNullable: true }),
+    location: new FormControl('', { nonNullable: true }),
+    package: new FormControl('Choose a package', { nonNullable: true }),
+    date: new FormControl('', { nonNullable: true }),
+    time: new FormControl('', { nonNullable: true }),
+    message: new FormControl('', { nonNullable: false })
+  });
 
   onSubmit() {
+    // Alert
     alert(
-      `Booking submitted!\n\nThank you ${this.formData.name}, we’ll contact you soon.`
+      `Booking submitted!\n\nThank you ${this.booking_form.get('name')?.value}, we’ll contact you soon.`
     );
 
+    // Log to console
+    console.log(this.booking_form.getRawValue());
+
     // Reset form after submission
-    this.formData = {
-      name: '',
-      email: '',
-      phone: '',
-      location: '',
-      package: '',
-      date: '',
-      time: '',
-      message: ''
-    };
+    this.booking_form.reset({});
   }
 }

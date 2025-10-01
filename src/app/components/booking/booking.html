@@ -1,116 +1,99 @@
-<section class="booking-section">
-  <h2>Book Now!</h2>
-  <form 
-  class="f"
-  (ngSubmit)="onSubmit()" #bookingForm="ngForm">
-    <label
-    class="flabel" 
-    for="name">Full Name:</label>
-    <input
-    class="fDevices"
-      type="text"
-      id="name"
-      name="name"
-      [(ngModel)]="formData.name"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+<section class="font-arial">
+  <h2
+  class="block text-center font-bold text-xl mb-2"
+  >Book Now!</h2>
 
-    <label
-     class="flabel"
-     for="email">Email:</label>
-    <input
-    class="fDevices"
-      type="email"
-      id="email"
-      name="email"
-      [(ngModel)]="formData.email"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+  <form
+   [formGroup]="booking_form" (ngSubmit)="onSubmit()">
+   <div class="f">
+    <div class="flabel">
+      <label
+      for="name">Full Name:</label>
+      <input
+      class="fDevices"
+        type="text"
+        id="name"
+        formControlName="name"/>
+    </div>
 
-    <label
-    class="flabel" 
-    for="phone">Phone Number:</label>
-    <input
-    class="fDevices"
-      type="tel"
-      id="phone"
-      name="phone"
-      [(ngModel)]="formData.phone"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+    <div class="flabel">
+      <label
+       for="email">Email:</label>
+      <input
+      class="fDevices"
+        type="email"
+        id="email"
+        formControlName="email"/>
+    </div>
 
-    <label
-    class="flabel"
-     for="location">Location:</label>
-    <input class="fDevices"
-      type="text"
-      id="location"
-      name="location"
-      [(ngModel)]="formData.location"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+    <div class="flabel">
+      <label
+      for="phone">Phone Number:</label>
+      <input
+      class="fDevices"
+        type="tel"
+        id="phone"
+        formControlName="phone"/>
+    </div>
 
-    <label
-     class="flabel"
-     for="package">Select Package:</label>
-    <select class="fDevices"
-      id="package"
-      name="package"
-      [(ngModel)]="formData.package"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    >
-      <option value="">Choose a package</option>
-      <option value="basic">Basic Wash - 10.00</option>
-      <option value="deluxe">Deluxe Wash - 15.00</option>
-      <option value="premium">Premium Shine - 20.00</option>
-      <option value="ultimate">Ultimate Clean - 25.00</option>
-      <option value="vip">VIP Package - 30.00</option>
-      <option value="family">Family Plan - 40.00</option>
-    </select>
+    <div class="flabel">
+      <label
+       for="location">Location:</label>
+      <input class="fDevices"
+        type="text"
+        id="location"
+        formControlName="location"/>
+    </div>
 
-    <label 
-    class="flabel"
-     for="date">Preferred Date:</label>
-    <input
-    class="fDevices"
-      type="date"
-      id="date"
-      name="date"
-      [(ngModel)]="formData.date"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+    <div class="flabel">
+      <label
+       for="package">Select Package:</label>
+      <select
+        id="package"
+        formControlName="package">
+        <option value="">Choose a package</option>
+        <option value="basic">Basic Wash - 10.00</option>
+        <option value="deluxe">Deluxe Wash - 15.00</option>
+        <option value="premium">Premium Shine - 20.00</option>
+        <option value="ultimate">Ultimate Clean - 25.00</option>
+        <option value="vip">VIP Package - 30.00</option>
+        <option value="family">Family Plan - 40.00</option>
+      </select>
+    </div>
 
-    <label class="flabel"
-    for="time">Preferred Time:</label>
-    <input
-    class="fDevices"
-      type="time"
-      id="time"
-      name="time"
-      [(ngModel)]="formData.time"
-      required
-      [ngModelOptions]="{ standalone: true }"
-    />
+    <div class="flabel">
+      <label
+       for="date">Preferred Date:</label>
+      <input
+      class="fDevices"
+        type="date"
+        id="date"
+        formControlName="date"/>
+    </div>
 
-    <label 
-    class="flabel" 
-    for="message">Additional Details:</label>
-    <textarea class="fDevices"
-      id="message"
-      name="message"
-      rows="4"
-      [(ngModel)]="formData.message"
-      [ngModelOptions]="{ standalone: true }"
-    ></textarea>
+    <div class="flabel">
+      <label 
+      for="time">Preferred Time:</label>
+      <input
+        type="time"
+        id="time"
+        formControlName="time"/>
+    </div>
 
-    <button 
-    class="fbutton" 
-    type="submit">Submit Booking</button>
+    <div class="flabel">
+      <label
+      for="message">Additional Details:</label>
+      <textarea 
+      class="fDevices"
+        id="message"
+        formControlName="message"
+        rows="4"></textarea>
+    </div>
+
+    <div class="fbutton">
+      <button
+      type="submit">Submit Booking</button>
+    </div>
+  </div>
   </form>
 </section>
