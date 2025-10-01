@@ -1,8 +1,13 @@
 <section class="booking-section">
   <h2>Book Now!</h2>
-  <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
-    <label for="name">Full Name:</label>
+  <form 
+  class="f"
+  (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+    <label
+    class="flabel" 
+    for="name">Full Name:</label>
     <input
+    class="fDevices"
       type="text"
       id="name"
       name="name"
@@ -11,8 +16,11 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="email">Email:</label>
+    <label
+     class="flabel"
+     for="email">Email:</label>
     <input
+    class="fDevices"
       type="email"
       id="email"
       name="email"
@@ -21,8 +29,11 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="phone">Phone Number:</label>
+    <label
+    class="flabel" 
+    for="phone">Phone Number:</label>
     <input
+    class="fDevices"
       type="tel"
       id="phone"
       name="phone"
@@ -31,8 +42,10 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="location">Location:</label>
-    <input
+    <label
+    class="flabel"
+     for="location">Location:</label>
+    <input class="fDevices"
       type="text"
       id="location"
       name="location"
@@ -41,8 +54,10 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="package">Select Package:</label>
-    <select
+    <label
+     class="flabel"
+     for="package">Select Package:</label>
+    <select class="fDevices"
       id="package"
       name="package"
       [(ngModel)]="formData.package"
@@ -58,8 +73,11 @@
       <option value="family">Family Plan - 40.00</option>
     </select>
 
-    <label for="date">Preferred Date:</label>
+    <label 
+    class="flabel"
+     for="date">Preferred Date:</label>
     <input
+    class="fDevices"
       type="date"
       id="date"
       name="date"
@@ -68,8 +86,10 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="time">Preferred Time:</label>
+    <label class="flabel"
+    for="time">Preferred Time:</label>
     <input
+    class="fDevices"
       type="time"
       id="time"
       name="time"
@@ -78,8 +98,10 @@
       [ngModelOptions]="{ standalone: true }"
     />
 
-    <label for="message">Additional Details:</label>
-    <textarea
+    <label 
+    class="flabel" 
+    for="message">Additional Details:</label>
+    <textarea class="fDevices"
       id="message"
       name="message"
       rows="4"
@@ -87,6 +109,8 @@
       [ngModelOptions]="{ standalone: true }"
     ></textarea>
 
-    <button type="submit">Submit Booking</button>
+    <button 
+    class="fbutton" 
+    type="submit">Submit Booking</button>
   </form>
 </section>

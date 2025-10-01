@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+f {
+    @apply p-[20px] border-[8px] max-w-[600px] m-0
+    /* background: linear-gradient(145deg, #ffffff, #ececec)
+    transform: rotateX(3deg) translateZ(15px) */
+    /* transform-style: preserve-3d
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.2), 
+        inset 0 1px 2px rgba(255,255,255,0.3)
+    border: 1px solid rgba(255,255,255,0.5) */
+}
+
+flabel {
+    @apply block mt-[10px]
+    /* transform: translateZ[5px]; */
+}
+
+fbutton {
+    @apply  text-white border mt-[20] cursor-pointer w-[100%]
+    /*p-[10px 20px] 
+    br-[4px]
+    bg-from-[#844ac7]-to-[$4717a1] 
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.3), 
+        inset 0 2px 2px rgba(255,255,255,0.4), 
+        inset 0 -2px 2px rgba(0,0,0,0.3)
+    transform: translateZ(10px)
+    transform-style: preserve-3d
+    transition: all 0.3s ease; */
+} 
+fDevices {
+    @apply w-[100%] p-[8px] mt-[5px] border-[1px] box-border transition-all 
+    /*br-[4px]
+    translateZ[8px]
+     box-shadow: 
+        inset 0 3px 6px rgba(0,0,0,0.1), 
+        0 0 5px rgba(0,123,255,0.1); */
+}
+
+/* fDevices2 {
+    @apply :focus, :focus, :focus {
+    /* Enhanced: Inputs lift and glow on focus */
+    /* transform: translateZ(8px)
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.05),
+        0 0 12px rgba(0,123,255,0.3)
+    /* border-color: #007bff; }*/
