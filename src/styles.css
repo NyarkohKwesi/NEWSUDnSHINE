@@ -16,7 +16,7 @@
 }
 
 .fbutton {
-    @apply  text-white border mt-[20] cursor-pointer w-[100%]
+    @apply  text-white border mt-[20] cursor-pointer w-[100%] bg-slate-500
   py-[10px] px-[20px] rounded-[4px] 
   bg-[linear-gradient(to_right,#844ac7,#4717a1)] 
   shadow-[0_6px_12px_rgba(0,0,0,0.3),inset_0_2px_2px_rgba(255,255,255,0.4),inset_0_-2px_2px_rgba(0,0,0,0.3)]
